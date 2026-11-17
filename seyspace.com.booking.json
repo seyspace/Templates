@@ -1,0 +1,34 @@
+{
+  "providerId": "seyspace.com",
+  "providerName": "SeySpace",
+  "serviceId": "booking",
+  "serviceName": "SeySpace Booking & Scheduling",
+  "version": 1,
+  "logoUrl": "https://seyspace.com/favicon.ico",
+  "description": "Connects your domain or subdomain to your SeySpace Client Booking & Scheduling site.",
+  "syncPubKeyDomain": "seyspace.com",
+  "syncRedirectDomain": "seyspace.com",
+  "variableDescription": {
+    "host": "The host or subdomain to route to your SeySpace Booking Site (e.g. book or schedule)",
+    "cname": "The SeySpace edge CNAME target (cname.vercel-dns.com)",
+    "ip": "The SeySpace Anycast A-Record IP (76.76.21.21)"
+  },
+  "records": [
+    {
+      "type": "CNAME",
+      "name": "%host%",
+      "target": "%cname%",
+      "ttl": 300,
+      "subDomain": "%host%",
+      "groupId": "subdomain"
+    },
+    {
+      "type": "A",
+      "name": "@",
+      "target": "%ip%",
+      "ttl": 300,
+      "subDomain": "",
+      "groupId": "apex"
+    }
+  ]
+}
